@@ -111,6 +111,7 @@ install_ruyi() {
 	DNF_INSTALL "curl git tar bzip2 xz zstd unzip"
 	APT_INSTALL "curl git tar bzip2 xz-utils zstd unzip"
 	PACMAN_INSTALL "curl git tar bzip2 xz zstd unzip"
+	EMERGE_INSTALL "net-misc/curl dev-vcs/git app-arch/tar app-arch/bzip2 app-arch/xz-utils app-arch/zstd app-arch/unzip"
 
 	export_ruyi_link
 	ruyi_curl ruyi $ruyi_link

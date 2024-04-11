@@ -26,6 +26,7 @@ function pre_test() {
     DNF_INSTALL "cmake ninja-build"
     APT_INSTALL "cmake ninja-build"
     PACMAN_INSTALL "cmake ninja"
+    EMERGE_INSTALL "dev-build/cmake dev-build/ninja"
     LOG_INFO "End of environmental preparation!"
 }
 
