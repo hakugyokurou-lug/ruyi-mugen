@@ -118,6 +118,18 @@ function PACMAN_INSTALL() {
     [ -z "$tmpfile" ] && tmpfile=$tmpfile2
 }
 
+function EMERGE_INSTALL() {
+    pkgs=$1
+    node=${2-1}
+    #多节点初始系统环境相同，本地和远端安装的包，在任何节点不应该存在
+    [ -z "$tmpfile" ] && tmpfile=""
+
+    tmpfile2=$(python3 ${OET_PATH}/libs/locallibs/emerge_manage.py \
+        install --pkgs "$pkgs" --node $node --tempfile "$tmpfile")
+
+    [ -z "$tmpfile" ] && tmpfile=$tmpfile2
+}
+
 function PKG_REMOVE() {
     node=${1-1}
     pkg_list=${2-""}
@@ -142,6 +154,8 @@ function PKG_REMOVE() {
             python3 ${OET_PATH}/libs/locallibs/deb_manage.py \
                 remove --node $node_id --pkgs "$pkg_list" --tempfile "$tmpfile"
             python3 ${OET_PATH}/libs/locallibs/archpkg_manage.py \
+                remove --node $node_id --pkgs "$pkg_list" --tempfile "$tmpfile"
+            python3 ${OET_PATH}/libs/locallibs/emerge_manage.py \
                 remove --node $node_id --pkgs "$pkg_list" --tempfile "$tmpfile"
         done
     else
