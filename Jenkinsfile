@@ -10,7 +10,9 @@ DISTROMAP = [
     'debian12-aarch64': ['label': 'debian12 && aarch64'],
     'debiansid-riscv64': ['label': 'debiansid && riscv64'],
     'archlinux-x86_64': ['label': 'archlinux && x86_64'],
-    'archlinux-riscv64': ['label': 'archlinux && riscv64']
+    'archlinux-riscv64': ['label': 'archlinux && riscv64'],
+    'gentoo-x86_64': ['label': 'gentoo && x86_64'],
+    'gentoo-riscv64': ['label': 'gentoo && riscv64']
     ]
 
 def mugen_install () {
@@ -64,7 +66,7 @@ pipeline {
                 axes {
                     axis {
                         name "DIRSTO"
-                        values "oE2309-x86_64", "ubuntu2204-x86_64", "ubuntu2204-riscv64", "fedora38-x86_64", "fedora38-riscv64", "revyos-riscv64", 'oE2309-riscv64', 'debian12-x86_64', 'debian12-aarch64', 'debiansid-riscv64', 'archlinux-x86_64', 'archlinux-riscv64'
+                        values "oE2309-x86_64", "ubuntu2204-x86_64", "ubuntu2204-riscv64", "fedora38-x86_64", "fedora38-riscv64", "revyos-riscv64", 'oE2309-riscv64', 'debian12-x86_64', 'debian12-aarch64', 'debiansid-riscv64', 'archlinux-x86_64', 'archlinux-riscv64', 'gentoo-riscv64'
                     }
                 }
                 
