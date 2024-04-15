@@ -35,7 +35,9 @@ report_name_js='{
 "oE2309-x86_64":	"RUYI_包管理_QEMU_openEuler23.09_x86_64_测试结果",
 "oE2309-riscv64":	"RUYI_包管理_QEMU_openEuler23.09_riscv64_测试结果",
 "archlinux-x86_64":	"RUYI_包管理_Container_Archlinux_x86_64_测试结果",
-"archlinux-riscv64":	"RUYI_包管理_Container_Archlinux_riscv64_测试结果"
+"archlinux-riscv64":	"RUYI_包管理_Container_Archlinux_riscv64_测试结果",
+"gentoo-x86_64":	"RUYI_包管理_QEMU_Gentoo_x86_64_测试结果",
+"gentoo-riscv64":	"RUYI_包管理_QEMU_Gentoo_riscv64_测试结果"
 }'
 log_name_js='{
 "revyos-riscv64":	"revyos_riscv64_container",
@@ -49,7 +51,9 @@ log_name_js='{
 "oE2309-x86_64":	"oE2309-x86_64-qemu",
 "oE2309-riscv64":	"oE2309-riscv64-qemu",
 "archlinux-x86_64":	"archlinux_x86_64_container",
-"archlinux-riscv64":	"archlinux_riscv64_container"
+"archlinux-riscv64":	"archlinux_riscv64_container",
+"gentoo-x86_64":	"gentoo_x86_64_qemu",
+"gentoo-riscv64":	"gentoo_riscv64_qemu"
 }'
 ruyitest_repo="https://gitee.com/yunxiangluo/ruyisdk-test/tree/master/20240312"
 ruyitest_repo_raw="https://gitee.com/yunxiangluo/ruyisdk-test/raw/master/20240312"
