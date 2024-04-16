@@ -78,7 +78,7 @@ pipeline {
                 
                 post {
                     always {
-                        archiveArtifacts artifacts: "ruyi_device_report/*.md"
+                        archiveArtifacts artifacts: "ruyi_device_report/"
                         cleanWs()
                     }
                 }

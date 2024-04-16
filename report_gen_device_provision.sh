@@ -41,5 +41,11 @@ sed -i "s/{{ruyi_arch}}/$arch/g" $report_dir/my
 sed -i "s/{{ruyi_version}}/$version/g" $report_dir/my
 sed -i "s|{{ruyi_link}}|$ruyi_link|g" $report_dir/my
 
+# format test logs name
+for f in $(find "${OET_PATH}"/logs -type f); do
+	mv "$f" "$(echo "$f" | sed "s/:/_/g")"
+done
+
+mv -v "${OET_PATH}"/logs/* $report_dir/
 mv -v $report_dir/my $report_dir/$report_name.md
 
