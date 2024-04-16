@@ -1,0 +1,8 @@
+{
+    "path": "$OET_PATH/testcases/smoke-test/ruyismoke",
+    "cases": [
+        {
+            "name": "ruyi_smoke_device_provision"
+        }
+    ]
+}
