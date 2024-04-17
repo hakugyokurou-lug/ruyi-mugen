@@ -25,7 +25,7 @@ usage() {
 }
 
 common_dep(){
-    sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install -y sudo expect psmisc iputils-ping make python3-paramiko python3-six || echo Not apt distro
+    sudo apt-get update && sudo NEEDRESTART_MODE=l apt-get upgrade -y && sudo apt-get install -y sudo expect psmisc iputils-ping make python3-paramiko python3-six || echo Not apt distro
     sudo dnf upgrade -y && sudo dnf install sudo expect psmisc make iputils python3-six python3-paramiko -y || echo Not rpm distro
     sudo pacman --noconfirm -Syuu && sudo pacman --need --noconfirm -S sudo expect psmisc make iputils python-six python-paramiko || echo Not archlinux distro
     # if /etc/portage/gnupg/pubring.kbx not appears, run ``getuto`` manually
