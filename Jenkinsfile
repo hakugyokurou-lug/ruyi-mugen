@@ -19,7 +19,7 @@ def mugen_install () {
     
     sh 'bash dep_install.sh'
     
-    sh 'mkdir conf'
+    sh 'mkdir -p conf'
     sh '''
     echo '{ "NODE": [{ "ID": 1, \
     "LOCALTION": "local", \
@@ -34,7 +34,7 @@ def mugen_install () {
     "SSH_PORT": 22, \
     "BMC_IP": "", \
     "BMC_USER": "", \
-    "BMC_PASSWORD": "" }]}' >> conf/env.json
+    "BMC_PASSWORD": "" }]}' > conf/env.json
     '''
 }
 
