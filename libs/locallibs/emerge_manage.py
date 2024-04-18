@@ -80,7 +80,7 @@ def emerge_install(pkgs, node=1, tmpfile=""):
         conn=conn,
         cmd="sudo emerge --color=n --getbinpkg --noreplace --autounmask=y --pretend "
         + pkgs
-        + ' 2>&1 | grep -E "\[ebuild[ ]*N[ ]*\]" | sed "s/\[ebuild[ ]*N[ ]*\] \([^ ]*\)[:-][0-9]*[ \.:].*/\\1/" | { while read lll; do echo -n "$lll "; done }'
+        + ' 2>&1 | grep -E "\[ebuild|\[binary[ ]*N[ ]*\]" | sed "s/\[ebuild\|\[binary[ ]*N[ ]*\] \([^ \.]*\)[:-][0-9]*[ \.:].*/\\1/" | { while read lll; do echo -n "$lll "; done }'
     )
     if len(depList.strip()) == 0:
         mugen_log.logging("info", "pkgs:(%s) is already installed" % pkgs)
