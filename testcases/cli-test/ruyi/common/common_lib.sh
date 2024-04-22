@@ -94,7 +94,7 @@ export_release_ruyi_link() {
 }
 
 export_github_release_ruyi_link() {
-	version="0.8.0-beta.20240407"
+	version="0.9.0-beta.20240421"
 	arch='amd64'
 	local larch="$(uname -m)"
 	if [ "$larch"  == "riscv64" ]; then arch='riscv64'; fi
