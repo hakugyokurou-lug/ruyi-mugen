@@ -91,7 +91,7 @@ def deb_install(pkgs, node=1, tmpfile=""):
 
     depCode, depList = func(
         conn=conn,
-        cmd="sudo apt-get --simulate --no-show-upgraded --no-install-recommends install "
+        cmd="sudo LC_ALL=C apt-get --simulate --no-show-upgraded --no-install-recommends install "
         + pkgs
         + ' 2>&1 | grep -iA 1000 "NEW packages will be installed" | grep -E "^  "'
     )
