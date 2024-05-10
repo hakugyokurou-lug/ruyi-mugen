@@ -14,7 +14,11 @@ DISTROMAP = [
     'gentoo-x86_64': ['label': 'gentoo && x86_64'],
     'gentoo-riscv64': ['label': 'gentoo && riscv64'],
     'openkylin-x86_64': ['label': 'openkylin1 && x86_64'],
-    'openkylin-riscv64': ['label': 'openkylin1 && riscv64']
+    'openkylin-riscv64': ['label': 'openkylin1 && riscv64'],
+    'oE2309-riscv64-lp4a': ['label': 'openEuler2309 && riscv64 && lp4a'],
+    'revyos-riscv64-lp4a': ['label': 'revyos && riscv64 && lp4a'],
+    'oE2309-riscv64-pbx': ['label': 'openEuler2309 && riscv64 && pbx'],
+    'fedora38-riscv64-pbx': ['label': 'fedora38 && riscv64 && pbx']
     ]
 
 def mugen_install () {
