@@ -39,7 +39,11 @@ report_name_js='{
 "gentoo-x86_64":	"RUYI_包管理_QEMU_Gentoo_x86_64_测试结果",
 "gentoo-riscv64":	"RUYI_包管理_QEMU_Gentoo_riscv64_测试结果",
 "openkylin-x86_64":	"RUYI_包管理_QEMU_openKylin_x86_64_测试结果",
-"openkylin-riscv64":	"RUYI_包管理_QEMU_openKylin_riscv64_测试结果"
+"openkylin-riscv64":	"RUYI_包管理_QEMU_openKylin_riscv64_测试结果",
+"oE2309-riscv64-lp4a":	"RUYI_包管理_LicheePi4A_openEuler23.09_riscv64_测试结果",
+"revyos-riscv64-lp4a":	"RUYI_包管理_LicheePi4A_RevyOS_riscv64_测试结果",
+"oE2309-riscv64-pbx":	"RUYI_包管理_Pioneer_Box_openEuler23.09_riscv64_测试结果",
+"fedora38-riscv64-pbx":	"RUYI_包管理_Pioneer_Box_Fedora38_riscv64_测试结果"
 }'
 log_name_js='{
 "revyos-riscv64":	"revyos_riscv64_container",
@@ -57,7 +61,11 @@ log_name_js='{
 "gentoo-x86_64":	"gentoo_x86_64_qemu",
 "gentoo-riscv64":	"gentoo_riscv64_qemu",
 "openkylin-x86_64":	"openkylin_x86_64_qemu",
-"openkylin-riscv64":	"openkylin_riscv64_qemu"
+"openkylin-riscv64":	"openkylin_riscv64_qemu",
+"oE2309-riscv64-lp4a":	"oE2309-riscv64-lp4a",
+"revyos-riscv64-lp4a":	"revyos-riscv64-lp4a",
+"oE2309-riscv64-pbx":	"oE2309-riscv64-pbx",
+"fedora38-riscv64-pbx":	"fedora38-riscv64-pbx"
 }'
 ruyitest_repo="https://gitee.com/yunxiangluo/ruyisdk-test/tree/master/20240312"
 ruyitest_repo_raw="https://gitee.com/yunxiangluo/ruyisdk-test/raw/master/20240312"
