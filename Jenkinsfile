@@ -12,7 +12,7 @@ DISTROMAP = [
     'archlinux-x86_64': ['label': 'archlinux && x86_64'],
     'archlinux-riscv64': ['label': 'archlinux && riscv64'],
     'gentoo-x86_64': ['label': 'gentoo && x86_64'],
-    'gentoo-riscv64': ['label': 'gentoo && riscv64']
+    'gentoo-riscv64': ['label': 'gentoo && riscv64'],
     'openkylin-x86_64': ['label': 'openkylin1 && x86_64'],
     'openkylin-riscv64': ['label': 'openkylin1 && riscv64']
     ]
