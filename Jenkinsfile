@@ -155,6 +155,36 @@ pipeline {
                 }
             }
         }
+
+        stage('Hardware') {
+            matrix {
+                agent { label DISTROMAP["${DIRSTO}"]['label'] }
+                axes {
+                    axis {
+                        name "DIRSTO"
+                        values "oE2309-riscv64-lp4a", "revyos-riscv64-lp4a", "oE2309-riscv64-pbx", 'fedora38-riscv64-pbx'
+                    }
+                }
+
+                stages {
+                    stage('mugen') {
+                        steps {
+                            echo "Start mugen test on ${DIRSTO}"
+                            mugen_install()
+                            mugen_run()
+                            mugen_report()
+                        }
+                    }
+                }
+
+                post {
+                    always {
+                        archiveArtifacts artifacts: "test-artifacts/*.*"
+                        cleanWs()
+                    }
+                }
+            }
+        }
     }
 }
 
