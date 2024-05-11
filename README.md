@@ -12,6 +12,7 @@ RuyiSDK mugen 测试分支
 + x86\_64 openEuler 23.09
 + x86\_64 Archlinux
 + x86\_64 Gentoo
++ x86\_64 openKylin 1.0.2
 + riscv64 Debian sid
 + riscv64 Fedora 38
 + riscv64 Ubuntu 22.04 LTS
@@ -19,6 +20,7 @@ RuyiSDK mugen 测试分支
 + riscv64 openEuler 23.09
 + riscv64 Archlinux
 + riscv64 Gentoo
++ riscv64 openKylin 1.0.1
 + aarch64 Debian 12
 
 ## 对上游 mugen 的更改
