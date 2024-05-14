@@ -50,12 +50,16 @@ function recursion_run() {
         sed "s/\x0D/\\n/g" /tmp/ruyi_device/output > /tmp/ruyi_device/output_e
         local happy
         happy=n
+        # download process
         grep -A 100 'Saving to' /tmp/ruyi_device/output_e | grep '\[=' && echo -e "\nHappy hacking! 0 0" >> /tmp/ruyi_device/output && happy=y
         [ $happy = n ] && curl_out=$(grep -A 100 'Total' /tmp/ruyi_device/output_e | grep -A 100 'Received' | awk '{printf $4" "}')
         for i in $(echo $curl_out); do
             [[ $i =~ [0-9]+ && $i != '0' ]] && echo -e "\nHappy hacking! 0 0" >> /tmp/ruyi_device/output && happy=y && break
         done
+        # failed to download
         ( ! grep "failed to fetch distfile" /tmp/ruyi_device/output_e ) && [ $happy = n ] && echo -e "\nHappy hacking! 0 1" >> /tmp/ruyi_device/output
+        # documentation only
+        grep "NOTE: You have to consult the official documentation" /tmp/ruyi_device/output_e && [ $happy = n ] && echo -e "\nHappy hacking! 0 0" >> /tmp/ruyi_device/output
         rm -f /tmp/ruyi_device/output_e
     elif [ ! -z "$end_exec" ] && [ "$end_exec" != "0" ]; then
         local ret
