@@ -58,8 +58,6 @@ function recursion_run() {
         done
         # failed to download
         ( ! grep "failed to fetch distfile" /tmp/ruyi_device/output_e ) && [ $happy = n ] && echo -e "\nHappy hacking! 0 1" >> /tmp/ruyi_device/output
-        # documentation only
-        grep "NOTE: You have to consult the official documentation" /tmp/ruyi_device/output_e && [ $happy = n ] && echo -e "\nHappy hacking! 0 0" >> /tmp/ruyi_device/output
         rm -f /tmp/ruyi_device/output_e
     elif [ ! -z "$end_exec" ] && [ "$end_exec" != "0" ]; then
         local ret
@@ -86,8 +84,7 @@ function recursion_run() {
     grep "failed to fetch distfile" /tmp/ruyi_device/output
     if [[ $? -eq 0 ]]; then
         recursion_run "$now_exec" "y"
-        ret=$(expr $ret + $?)
-        return $ret;
+        return $?;
     fi
     grep "Proceed with flashing" /tmp/ruyi_device/output
     if [[ $? -eq 0 ]]; then
@@ -104,8 +101,12 @@ function recursion_run() {
         rm -rf /tmp/ruyi_device/test
         touch /tmp/ruyi_device/test
         recursion_run "$now_exec\n/tmp/ruyi_device/test" 1
-        ret=$(expr $ret + $?)
-        return $ret;
+        return $?;
+    fi
+    grep "NOTE: You have to consult the official documentation" /tmp/ruyi_device/output
+    if [[ $? -eq 0 ]]; then
+        recursion_run "$now_exec" "1"
+        return $?
     fi
     grep 'Proceed' /tmp/ruyi_device/output
     if [[ $? -eq 0 ]]; then
