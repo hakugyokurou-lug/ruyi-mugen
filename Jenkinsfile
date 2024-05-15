@@ -52,7 +52,7 @@ def mugen_run () {
 def mugen_report() {
     sh 'bash dep_install.sh -j'
     sh "bash report_gen.sh ${DIRSTO}"
-    sh "mkdir test-artifacts"
+    sh "mkdir -p test-artifacts"
     sh "mv ruyi-test-logs.tar.gz test-artifacts/ruyi-test-${DIRSTO}-logs.tar.gz"
     sh "mv ruyi-test-logs_failed.tar.gz test-artifacts/ruyi-test-${DIRSTO}-logs_failed.tar.gz"
     sh "mv ruyi_report/*.md test-artifacts"
