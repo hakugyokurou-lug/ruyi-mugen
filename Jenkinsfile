@@ -66,103 +66,13 @@ pipeline {
     }
 
     stages {
-        stage('Debian_Like') {
-            matrix {
-                agent { label DISTROMAP["${DIRSTO}"]['label'] }
-                axes {
-                    axis {
-                        name "DIRSTO"
-                        values "ubuntu2204-x86_64", "ubuntu2204-riscv64", "revyos-riscv64", 'debian12-x86_64', 'debian12-aarch64', 'debiansid-riscv64', 'openkylin-x86_64', 'openkylin-riscv64'
-                    }
-                }
-                
-                stages {
-                    stage('mugen') {
-                        steps {
-                            echo "Start mugen test on ${DIRSTO}"
-                            mugen_install()
-                            mugen_run()
-                            mugen_report()
-                        }
-                    }
-                }
-
-                post {
-                    always {
-                        archiveArtifacts artifacts: "test-artifacts/*.*"
-                        cleanWs()
-                    }
-                }
-            }
-        }
-
         stage('Gentoo&&Archlinux') {
             matrix {
                 agent { label DISTROMAP["${DIRSTO}"]['label'] }
                 axes {
                     axis {
                         name "DIRSTO"
-                        values 'archlinux-x86_64', 'archlinux-riscv64', 'gentoo-x86_64', 'gentoo-riscv64'
-                    }
-                }
-
-                stages {
-                    stage('mugen') {
-                        steps {
-                            echo "Start mugen test on ${DIRSTO}"
-                            mugen_install()
-                            mugen_run()
-                            mugen_report()
-                        }
-                    }
-                }
-
-                post {
-                    always {
-                        archiveArtifacts artifacts: "test-artifacts/*.*"
-                        cleanWs()
-                    }
-                }
-            }
-        }
-
-        stage('RedHat_Like') {
-            matrix {
-                agent { label DISTROMAP["${DIRSTO}"]['label'] }
-                axes {
-                    axis {
-                        name "DIRSTO"
-                        values "oE2309-x86_64", "fedora38-x86_64", "fedora38-riscv64", 'oE2309-riscv64'
-                    }
-                }
-
-                stages {
-                    stage('mugen') {
-                        steps {
-                            echo "Start mugen test on ${DIRSTO}"
-                            mugen_install()
-                            mugen_run()
-                            mugen_report()
-                        }
-                    }
-                }
-
-                post {
-                    always {
-                        archiveArtifacts artifacts: "test-artifacts/*.*"
-                        cleanWs()
-                    }
-                }
-            }
-        }
-
-        stage('Hardware') {
-            matrix {
-                agent { label DISTROMAP["${DIRSTO}"]['label'] }
-                axes {
-                    axis {
-                        name "DIRSTO"
-                        values "oE2309-riscv64-lp4a", "revyos-riscv64-lp4a", "oE2309-riscv64-pbx", 'fedora38-riscv64-pbx'
+                        values "oE2309-x86_64", 'archlinux-x86_64', 'archlinux-riscv64', 'gentoo-riscv64'
                     }
                 }
 
